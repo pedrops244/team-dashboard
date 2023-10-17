@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex">
+  <div class="d-flex justify-center">
     <p>Header</p>
     <p>{{ props.msg }}</p>
   </div>

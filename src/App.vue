@@ -1,17 +1,13 @@
 <template>
   <v-app>
     <v-app-bar>
-      <TheHeader v-if="showHeader" />
+      <TheHeader />
     </v-app-bar>
 
-    <v-main class="mt-5 d-flex flex-column">
-      <div v-show="showName">
-        <h1>Nome: {{ firstName }}</h1>
-        <h1>Sobrenome: {{ lastName }}</h1>
+    <v-main class="mt-5 d-flex flex-column text-no-wrap text-capitalize">
+      <div v-for="(obj, idx) in toDos" :key="obj.id">
+        <p class="mb-2 ml-10">{{ idx }} - {{ obj.title }}</p>
       </div>
-      <div v-if="acessLevel === 'admin'">Admin</div>
-      <div v-else-if="acessLevel === 'marketing'">Marketing</div>
-      <div v-else>User</div>
     </v-main>
   </v-app>
 </template>
@@ -20,25 +16,42 @@
 import TheHeader from '@/components/Header.vue';
 
 const props = defineProps({
-  showHeader: {
-    type: Boolean,
-    default: true,
-  },
-  showName: {
-    type: Boolean,
-    default: true,
-  },
-  firstName: {
-    type: String,
-    default: 'Pedr1n',
-  },
-  lastName: {
-    type: String,
-    default: 'Souzaa',
-  },
-  acessLevel: {
-    type: String,
-    default: '',
+  toDos: {
+    type: Object,
+    default() {
+      return [
+        {
+          userId: 1,
+          id: 1,
+          title: 'delectus aut autem',
+          completed: false,
+        },
+        {
+          userId: 1,
+          id: 2,
+          title: 'quis ut nam facilis et officia qui',
+          completed: false,
+        },
+        {
+          userId: 1,
+          id: 3,
+          title: 'fugiat veniam minus',
+          completed: false,
+        },
+        {
+          userId: 1,
+          id: 4,
+          title: 'et porro tempora',
+          completed: true,
+        },
+        {
+          userId: 1,
+          id: 5,
+          title: 'laboriosam mollitia et enim quasi adipisci quia provident illum',
+          completed: false,
+        },
+      ];
+    },
   },
 });
 </script>
