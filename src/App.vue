@@ -5,8 +5,9 @@
     </v-app-bar>
 
     <v-main class="mt-5 d-flex flex-column text-no-wrap text-capitalize">
-      <div v-for="(obj, idx) in toDos" :key="obj.id">
-        <p class="mb-2 ml-10">{{ idx }} - {{ obj.title }}</p>
+      <div v-for="(obj, idx) in toDos" :key="obj.id" class="mb-2 ml-10">
+        <v-img v-if="obj.imgSrc" :src="obj.imgSrc" width="150px" />
+        {{ idx }} - {{ obj.title }}
       </div>
     </v-main>
   </v-app>
@@ -25,12 +26,14 @@ const props = defineProps({
           id: 1,
           title: 'delectus aut autem',
           completed: false,
+          imgSrc: 'https://via.placeholder.com/150',
         },
         {
           userId: 1,
           id: 2,
           title: 'quis ut nam facilis et officia qui',
           completed: false,
+          imgSrc: 'https://via.placeholder.com/150',
         },
         {
           userId: 1,
