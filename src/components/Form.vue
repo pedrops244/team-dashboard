@@ -1,19 +1,23 @@
 <script setup>
-import { ref, reactive } from 'vue';
-let nome = ref('');
-let date = ref('');
-let age = ref(29);
+import { reactive } from 'vue';
+
+const pessoa = reactive({
+  nome: '',
+  date: '',
+  age: 25,
+});
 </script>
 
 <template>
   <v-col cols="12" sm="6" md="4" lg="3">
     <v-card flat color="primary" class="border-b">
-      <v-text-field v-model="nome" type="text" label="Name"></v-text-field>
-      <v-text-field v-model="date" type="number" label="Date"></v-text-field>
+      <v-text-field v-model="pessoa.nome" type="text" label="Name"></v-text-field>
+      <v-text-field v-model="pessoa.date" type="number" label="Date"></v-text-field>
 
       <v-card-text>
-        {{ nome }} <br />
-        {{ date }}
+        {{ pessoa.nome }} <br />
+        {{ pessoa.date }} <br />
+        A idade padrão é: {{ pessoa.age }}
       </v-card-text>
 
       <v-card-actions>
