@@ -3,9 +3,7 @@
     <v-app-bar-title>Menuzinho</v-app-bar-title>
 
     <v-btn prepend-icon="mdi-home"> Home</v-btn>
-
     <v-btn prepend-icon="mdi-information-outline"> Sobre </v-btn>
-
     <v-btn prepend-icon="mdi-login"> Login </v-btn>
   </v-app-bar>
 </template>
