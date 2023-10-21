@@ -7,7 +7,7 @@ import Form from './components/Form.vue';
     <v-main>
       <Menu />
       <v-container class="d-flex flex-column align-center" fluid>
-        <h1>Dashboard</h1>
+        <h1>Profile</h1>
 
         <Form />
       </v-container>
