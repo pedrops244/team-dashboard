@@ -11,11 +11,16 @@ const searchInformations = async (code) => {
 };
 
 watch(userCode, (novo) => {
-  if (novo <= 0) alert('Invalid code');
+  if (novo <= 0) userCode.value = 1;
 });
+
 watchEffect(async () => {
   pessoa.value = await searchInformations(userCode.value || 1);
 });
+
+const handleAlert = () => {
+  console.log('Alert called!');
+};
 </script>
 
 <template>
@@ -29,7 +34,9 @@ watchEffect(async () => {
 
   <v-col cols="12" sm="6" md="4" lg="3">
     <v-card flat color="orange-darken-2" class="border-b">
-      <v-text-field v-model="userCode" type="number" min="1" max="12" label="User Code (1 - 12)"></v-text-field>
+      <v-form @submit.prevent="handleAlert">
+        <v-text-field v-model="userCode" type="number" min="1" max="12" label="User Code (1 - 12)"></v-text-field>
+      </v-form>
     </v-card>
   </v-col>
 </template>

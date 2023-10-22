@@ -1,6 +1,7 @@
 <script setup>
 import ThisMenu from '@/components/Menu.vue';
 import ThisForm from './components/Form.vue';
+import UserList from './components/UserList.vue';
 </script>
 <template>
   <v-app>
@@ -10,6 +11,9 @@ import ThisForm from './components/Form.vue';
         <h1>Profile</h1>
 
         <ThisForm />
+        <v-row>
+          <UserList />
+        </v-row>
       </v-container>
     </v-main>
   </v-app>
