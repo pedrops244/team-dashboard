@@ -1,4 +1,5 @@
 <script setup>
+import Alert from './Alert.vue';
 defineProps({
   person: {
     type: Object,
@@ -55,6 +56,7 @@ const sendEmit = (id) => {
           >Desmarcar</v-btn
         >
       </v-card-actions>
+      <Alert />
     </v-card>
   </v-col>
 </template>

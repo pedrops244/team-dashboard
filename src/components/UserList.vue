@@ -1,10 +1,11 @@
 <script setup>
-import { ref, onMounted, watchEffect } from 'vue';
+import { ref, onMounted, watchEffect, provide } from 'vue';
 import User from './User.vue';
 
 const pessoas = ref([]);
 const idsSelect = ref([]);
 const selectPerson = ref([]);
+const alert = 'Em caso de dúvidas, contate o suporte.';
 
 const searchInformations = async (code) => {
   const req = await fetch(`https://reqres.in/api/users?page=1`);
@@ -33,6 +34,8 @@ watchEffect(() => {
 const idSelect = (id) => {
   return idsSelect.value.includes(id);
 };
+
+provide('alert', alert);
 </script>
 
 <template>
