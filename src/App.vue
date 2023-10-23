@@ -3,15 +3,13 @@ import ThisMenu from '@/components/Menu.vue';
 import UserList from './components/UserList.vue';
 </script>
 <template>
-  <v-app>
+  <v-app theme="dark">
     <v-main>
       <ThisMenu />
       <v-container class="d-flex flex-column align-center" fluid>
-        <h1>Profile</h1>
+        <h1>Profile users</h1>
 
-        <v-row>
-          <UserList />
-        </v-row>
+        <UserList />
       </v-container>
     </v-main>
   </v-app>

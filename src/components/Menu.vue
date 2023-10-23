@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar color="pink-lighten-1" flat class="border-b">
+  <v-app-bar color="primary" flat class="border-b">
     <v-app-bar-title>Menu of app</v-app-bar-title>
 
     <v-btn prepend-icon="mdi-home"> Home</v-btn>
