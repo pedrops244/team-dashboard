@@ -7,7 +7,7 @@ import UserList from './components/UserList.vue';
     <v-main>
       <ThisMenu />
       <v-container class="d-flex flex-column align-center" fluid>
-        <h1>Profile users</h1>
+        <h1>Profile Users</h1>
 
         <UserList />
       </v-container>
