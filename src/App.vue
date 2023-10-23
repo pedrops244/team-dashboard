@@ -3,7 +3,7 @@ import ThisMenu from '@/components/Menu.vue';
 import UserList from './components/UserList.vue';
 </script>
 <template>
-  <v-app theme="dark">
+  <v-app>
     <v-main>
       <ThisMenu />
       <v-container class="d-flex flex-column align-center" fluid>

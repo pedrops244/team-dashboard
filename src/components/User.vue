@@ -44,14 +44,14 @@ const sendEmit = (id) => {
           v-if="!selectPerson"
           color="primary"
           variant="elevated"
-          @click="($event) => sendEmit(person.id)"
+          @click="(e) => sendEmit(person.id)"
           >Selecionar</v-btn
         >
         <v-btn
           v-else
-          color="red"
+          color="red-accent-4"
           variant="elevated"
-          @click="($event) => sendEmit(person.id)"
+          @click="(e) => sendEmit(person.id)"
           >Desmarcar</v-btn
         >
       </v-card-actions>
