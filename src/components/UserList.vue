@@ -1,21 +1,14 @@
 <script setup>
-import { ref, onMounted, watchEffect, provide } from 'vue';
+import { ref, computed } from 'vue';
 import User from './User.vue';
+import { useFetch } from '../composables/fetch';
 
-const pessoas = ref([]);
+const {
+  data: pessoas,
+  error,
+  loading,
+} = useFetch('https://reqres.in/api/users?delay=1');
 const idsSelect = ref([]);
-const selectPerson = ref([]);
-const alert = 'Em caso de dúvidas, contate o suporte.';
-
-const searchInformations = async (code) => {
-  const req = await fetch(`https://reqres.in/api/users?page=1`);
-  const json = await req.json();
-  return json.data;
-};
-
-onMounted(async () => {
-  pessoas.value = await searchInformations();
-});
 
 const addSelect = (event) => {
   if (idSelect(event)) {
@@ -25,17 +18,14 @@ const addSelect = (event) => {
   idsSelect.value.push(event);
 };
 
-watchEffect(() => {
-  selectPerson.value = pessoas.value.filter((x) =>
-    idsSelect.value.includes(x.id),
-  );
+const selectPerson = computed(() => {
+  if (!pessoas.value) return [];
+  return pessoas.value.filter((x) => idsSelect.value.includes(x.id));
 });
 
 const idSelect = (id) => {
   return idsSelect.value.includes(id);
 };
-
-provide('alert', alert);
 </script>
 
 <template>
@@ -50,7 +40,14 @@ provide('alert', alert);
       >{{ pm.first_name }}</v-chip
     >
   </div>
-  <v-row class="mt-1">
+  <v-progress-circular
+    v-if="loading"
+    color="primary"
+    indeterminate
+    :size="180"
+    :width="10"
+  ></v-progress-circular>
+  <v-row v-else class="mt-1">
     <User
       v-for="pessoa in pessoas"
       :key="pessoa.id"
@@ -58,5 +55,8 @@ provide('alert', alert);
       :person="pessoa"
       @select="addSelect"
     />
+    <v-alert v-if="error" closable title="Error" type="error" variant="tonal">{{
+      error
+    }}</v-alert>
   </v-row>
 </template>

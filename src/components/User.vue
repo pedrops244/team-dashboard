@@ -1,5 +1,4 @@
 <script setup>
-import Alert from './Alert.vue';
 defineProps({
   person: {
     type: Object,
@@ -40,7 +39,7 @@ const sendEmit = (id) => {
 
       <v-card-text> {{ person.email }}</v-card-text>
 
-      <v-card-actions>
+      <v-card-actions class="mb-2">
         <v-btn
           v-if="!selectPerson"
           color="primary"
@@ -56,7 +55,6 @@ const sendEmit = (id) => {
           >Desmarcar</v-btn
         >
       </v-card-actions>
-      <Alert />
     </v-card>
   </v-col>
 </template>
