@@ -55,8 +55,14 @@ const idSelect = (id) => {
       :person="pessoa"
       @select="addSelect"
     />
-    <v-alert v-if="error" closable title="Error" type="error" variant="tonal">{{
-      error
-    }}</v-alert>
+    <v-alert
+      v-if="error"
+      closable
+      title="Error"
+      type="error"
+      variant="tonal"
+      class="mt-6"
+      >{{ error }}</v-alert
+    >
   </v-row>
 </template>
