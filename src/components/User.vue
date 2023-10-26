@@ -1,4 +1,5 @@
 <script setup>
+import { useRouter } from 'vue-router';
 defineProps({
   person: {
     type: Object,
@@ -16,6 +17,10 @@ const emit = defineEmits(['select']);
 
 const sendEmit = (id) => {
   emit('select', id);
+};
+const router = useRouter();
+const showDetails = (id) => {
+  router.push(`/equipe/${id}`);
 };
 </script>
 
@@ -53,6 +58,12 @@ const sendEmit = (id) => {
           variant="elevated"
           @click="(e) => sendEmit(person.id)"
           >Desmarcar</v-btn
+        >
+        <v-btn
+          color="grey-lighten-1"
+          variant="elevated"
+          @click="showDetails(person.id)"
+          >Mais detalhes</v-btn
         >
       </v-card-actions>
     </v-card>

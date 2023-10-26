@@ -7,7 +7,7 @@ const {
   data: pessoas,
   error,
   loading,
-} = useFetch('https://reqres.in/api/users?delay=1');
+} = useFetch('https://reqres.in/api/users?delay=0');
 const idsSelect = ref([]);
 
 const addSelect = (event) => {
