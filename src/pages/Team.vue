@@ -6,7 +6,9 @@ import { useFetch } from '@/composables/fetch';
 const userCode = ref('');
 const showBtn = computed(() => userCode.value > 0);
 
-const { data: pessoa, loading } = useFetch(`https://reqres.in/api/users/`);
+const { data: pessoa, loading } = useFetch(
+  `https://reqres.in/api/users?delay=0`,
+);
 onMounted(async () => {
   pessoa.value = await searchInformations(1);
 });

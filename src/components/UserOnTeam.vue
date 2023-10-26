@@ -15,7 +15,7 @@ defineProps({
 </script>
 
 <template>
-  <v-col cols="5">
+  <v-col cols="12" sm="6" md="4" lg="4">
     <v-card
       flat
       color="primary"
@@ -33,7 +33,7 @@ defineProps({
       </v-card-title>
       <v-card-subtitle class="mb-3">
         Badge number:
-        {{ person.id + Math.floor(Math.random() * 20) }}
+        {{ person.id + Math.floor(Math.random() * 20) || '0' }}
       </v-card-subtitle>
     </v-card>
   </v-col>

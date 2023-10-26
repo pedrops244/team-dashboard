@@ -15,7 +15,8 @@ defineProps({
 </script>
 
 <template>
-  <v-col cols="6">
+  <h1>User Details</h1>
+  <v-col cols="12" sm="6" md="4" lg="4">
     <v-card
       flat
       color="orange"
