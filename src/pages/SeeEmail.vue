@@ -1,5 +1,5 @@
 <script setup>
-import User from '@/components/User.vue';
+import UserDetailed from '@/components/UserDetailed.vue';
 import { useFetch } from '@/composables/fetch';
 import { useRoute } from 'vue-router';
 const router = useRoute();
@@ -14,5 +14,5 @@ const { data: pessoa, loading } = useFetch(`https://reqres.in/api/users/${id}`);
     :size="180"
     :width="10"
   ></v-progress-circular>
-  <User v-else :person="pessoa" />
+  <UserDetailed v-else :person="pessoa" />
 </template>

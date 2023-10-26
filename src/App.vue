@@ -1,6 +1,5 @@
 <script setup>
 import ThisMenu from '@/components/Menu.vue';
-import UserList from './components/UserList.vue';
 </script>
 <template>
   <v-app>

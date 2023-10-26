@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
 import Home from '../pages/Home.vue';
-import Equipe from '../pages/Equipe.vue';
-import Funcionario from '../pages/Funcionario.vue';
+import Team from '../pages/Team.vue';
+import SeeEmail from '../pages/SeeEmail.vue';
 import Page404 from '../pages/Page404.vue';
 
 const routes = [
@@ -18,13 +18,13 @@ const routes = [
   },
   {
     path: '/equipe',
-    name: 'Equipe',
-    component: Equipe,
+    name: 'Team',
+    component: Team,
   },
   {
     path: '/equipe/:id',
-    name: 'Functionario',
-    component: Funcionario,
+    name: 'SeeEmail',
+    component: SeeEmail,
   },
 ];
 

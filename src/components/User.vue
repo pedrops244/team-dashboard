@@ -7,7 +7,6 @@ defineProps({
       id: 0,
       first_name: '',
       last_name: '',
-      email: '',
       avatar: '',
     }),
   },
@@ -42,28 +41,26 @@ const showDetails = (id) => {
         {{ person.first_name }} {{ person.last_name }}
       </v-card-title>
 
-      <v-card-text> {{ person.email }}</v-card-text>
-
       <v-card-actions class="mb-2">
         <v-btn
           v-if="!selectPerson"
           color="primary"
           variant="elevated"
           @click="(e) => sendEmit(person.id)"
-          >Selecionar</v-btn
+          >Select</v-btn
         >
         <v-btn
           v-else
           color="red-accent-4"
           variant="elevated"
           @click="(e) => sendEmit(person.id)"
-          >Desmarcar</v-btn
+          >Deselect</v-btn
         >
         <v-btn
           color="grey-lighten-1"
           variant="elevated"
           @click="showDetails(person.id)"
-          >Mais detalhes</v-btn
+          >See e-mail</v-btn
         >
       </v-card-actions>
     </v-card>

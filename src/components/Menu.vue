@@ -4,7 +4,6 @@
       <v-btn icon="mdi mdi-theme-light-dark" @click="toggleTheme"> </v-btn>
       <v-btn prepend-icon="mdi-home" to="/"> Home </v-btn>
       <v-btn prepend-icon="mdi-account-group" to="/equipe"> Team </v-btn>
-      <v-btn prepend-icon="mdi-login"> Login </v-btn>
     </v-app-bar-title>
   </v-app-bar>
 </template>
