@@ -32,8 +32,5 @@ defineProps({
     <v-card-text>
       <a href="mailto:" style="color: black">{{ person.email }}</a></v-card-text
     >
-    <v-card-actions>
-      <v-btn variant="outlined">Selecionar</v-btn>
-    </v-card-actions>
   </v-card>
 </template>
