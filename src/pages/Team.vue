@@ -2,6 +2,11 @@
 import { ref, computed, onMounted } from 'vue';
 import UserOnTeam from '@/components/UserOnTeam.vue';
 import { useFetch } from '@/composables/fetch';
+import { useCargos } from '@/store/cargos';
+import { storeToRefs } from 'pinia';
+
+const store = useCargos();
+const { cargos } = storeToRefs(store);
 
 const userCode = ref('');
 const showBtn = computed(() => userCode.value > 0);
@@ -9,21 +14,28 @@ const showBtn = computed(() => userCode.value > 0);
 const { data: pessoa, loading } = useFetch(
   `https://reqres.in/api/users?delay=0`,
 );
+
 onMounted(async () => {
   pessoa.value = await searchInformations(1);
 });
+
 const handleInformations = async () => {
   pessoa.value = await searchInformations(userCode.value);
 };
+
 const searchInformations = async (code) => {
   const req = await fetch(`https://reqres.in/api/users/${code}`);
   const json = await req.json();
   return json.data;
 };
+
+function getCargo(id) {
+  return cargos.value.find((cargo) => cargo.id === id)?.cargo;
+}
 </script>
 <template>
   <h1>Team</h1>
-  <v-col cols="12" sm="6" md="4" lg="3">
+  <v-col cols="12" sm="6" md="6" lg="3">
     <v-card flat color="orange-darken-2" class="border-b">
       <v-text-field
         v-model="userCode"
@@ -46,5 +58,5 @@ const searchInformations = async (code) => {
     :size="180"
     :width="10"
   ></v-progress-circular>
-  <UserOnTeam v-else :person="pessoa" />
+  <UserOnTeam v-else :person="pessoa" :cargo="getCargo(pessoa.id)" />
 </template>

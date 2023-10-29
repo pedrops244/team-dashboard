@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/require-default-prop -->
 <script setup>
 defineProps({
   person: {
@@ -9,6 +10,10 @@ defineProps({
       email: '',
       avatar: '',
     }),
+  },
+  cargo: {
+    type: String,
+    default: 'Nenhum cargo selecionado.',
   },
   selectPerson: Boolean,
 });
@@ -31,6 +36,10 @@ defineProps({
       <v-card-title>
         {{ person.first_name }} {{ person.last_name }}
       </v-card-title>
+      <v-card-title>
+        {{ cargo }}
+      </v-card-title>
+
       <v-card-subtitle class="mb-3">
         Badge number:
         {{ person.id + Math.floor(Math.random() * 20) || '0' }}
