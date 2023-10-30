@@ -1,12 +1,11 @@
 <script setup>
-import { ref, watch, onMounted } from 'vue';
+import { ref, watch } from 'vue';
 import UserDetailed from '@/components/UserDetailed.vue';
 import { useFetch } from '@/composables/fetch';
 import { useRoute } from 'vue-router';
 import { useCargos } from '../store/cargos';
 
 import { storeToRefs } from 'pinia';
-import { get } from '@vueuse/core';
 
 const store = useCargos();
 const { cargos } = storeToRefs(store);
@@ -39,7 +38,7 @@ function getCargo(id) {
     <v-select
       v-model="selectCargo"
       class="mt-3"
-      label="Select the employee"
+      label="Select the position"
       :items="['Manager', 'Supervisor', 'Employee']"
       variant="outlined"
     ></v-select>

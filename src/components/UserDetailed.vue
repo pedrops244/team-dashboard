@@ -37,7 +37,7 @@ defineProps({
     >
     <v-card-actions>
       <v-btn variant="outlined" @click="store.removeCargo(person.id)"
-        >Remover Cargo</v-btn
+        >Remove position</v-btn
       >
     </v-card-actions>
   </v-card>

@@ -60,7 +60,7 @@ const showDetails = (id) => {
           color="grey-lighten-1"
           variant="elevated"
           @click="showDetails(person.id)"
-          >See e-mail</v-btn
+          >More details</v-btn
         >
       </v-card-actions>
     </v-card>
