@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 import Home from '../pages/Home.vue';
 import Team from '../pages/Team.vue';
-import SeeEmail from '../pages/SeeEmail.vue';
+import MoreDetails from '../pages/MoreDetails.vue';
 import Page404 from '../pages/Page404.vue';
 
 const routes = [
@@ -23,8 +23,8 @@ const routes = [
   },
   {
     path: '/equipe/:id',
-    name: 'SeeEmail',
-    component: SeeEmail,
+    name: 'MoreDetails',
+    component: MoreDetails,
   },
 ];
 

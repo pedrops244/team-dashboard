@@ -6,21 +6,25 @@ import { useRoute } from 'vue-router';
 import { useCargos } from '../store/cargos';
 
 import { storeToRefs } from 'pinia';
+import { get } from '@vueuse/core';
 
 const store = useCargos();
-const { cargos: cargo } = storeToRefs(store);
+const { cargos } = storeToRefs(store);
 
 const { addCargo } = useCargos();
 const router = useRoute();
 const id = router.params.id;
 const { data: pessoa, loading } = useFetch(`https://reqres.in/api/users/${id}`);
-const selectCargo = ref(cargo.value[id - 1]?.cargo ?? '');
+const selectCargo = ref(getCargo(Number(id)));
 
 watch(selectCargo, (newCargo) => {
   const { id, first_name: nome } = pessoa.value;
   const employee = { id, nome, cargo: newCargo };
   addCargo(employee);
 });
+function getCargo(id) {
+  return cargos.value.find((cargo) => cargo.id === id)?.cargo;
+}
 </script>
 <template>
   <v-col cols="12" sm="6" md="4" lg="4">

@@ -3,7 +3,7 @@ import { computed, ref } from 'vue';
 import { useStorage } from '@vueuse/core';
 
 export const useCargos = defineStore('cargos', () => {
-  const cargos = useStorage('cargos', []);
+  const cargos = useStorage('cargo', []);
 
   const addCargo = (employee) => {
     cargos.value = cargos.value.filter((x) => x.id !== employee.id);
@@ -12,7 +12,7 @@ export const useCargos = defineStore('cargos', () => {
   const removeCargo = (id) => {
     cargos.value = cargos.value.filter((x) => x.id !== id);
     alert('Position removed successfully');
-    window.location.reload();
+    location.reload();
   };
 
   const totalCargos = computed(() => cargos.value.length);
