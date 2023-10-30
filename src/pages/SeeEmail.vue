@@ -1,16 +1,20 @@
 <script setup>
-import { ref, watch } from 'vue';
+import { ref, watch, onMounted } from 'vue';
 import UserDetailed from '@/components/UserDetailed.vue';
 import { useFetch } from '@/composables/fetch';
 import { useRoute } from 'vue-router';
 import { useCargos } from '../store/cargos';
 
+import { storeToRefs } from 'pinia';
+
+const store = useCargos();
+const { cargos: cargo } = storeToRefs(store);
+
 const { addCargo } = useCargos();
 const router = useRoute();
 const id = router.params.id;
 const { data: pessoa, loading } = useFetch(`https://reqres.in/api/users/${id}`);
-const selectCargo = ref('');
-const cargos = ['Manager', 'Supervisor', 'Employee'];
+const selectCargo = ref(cargo.value[id - 1]?.cargo ?? '');
 
 watch(selectCargo, (newCargo) => {
   const { id, first_name: nome } = pessoa.value;
@@ -32,7 +36,7 @@ watch(selectCargo, (newCargo) => {
       v-model="selectCargo"
       class="mt-3"
       label="Select the employee"
-      :items="cargos"
+      :items="['Manager', 'Supervisor', 'Employee']"
       variant="outlined"
     ></v-select>
   </v-col>

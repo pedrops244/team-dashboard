@@ -1,4 +1,6 @@
 <script setup>
+import { useCargos } from '@/store/cargos';
+const store = useCargos();
 defineProps({
   person: {
     type: Object,
@@ -10,6 +12,7 @@ defineProps({
       avatar: '',
     }),
   },
+
   selectPerson: Boolean,
 });
 </script>
@@ -32,5 +35,10 @@ defineProps({
     <v-card-text>
       <a href="mailto:" style="color: black">{{ person.email }}</a></v-card-text
     >
+    <v-card-actions>
+      <v-btn variant="outlined" @click="store.removeCargo(person.id)"
+        >Remover Cargo</v-btn
+      >
+    </v-card-actions>
   </v-card>
 </template>

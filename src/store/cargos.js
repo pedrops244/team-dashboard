@@ -11,6 +11,8 @@ export const useCargos = defineStore('cargos', () => {
   };
   const removeCargo = (id) => {
     cargos.value = cargos.value.filter((x) => x.id !== id);
+    alert('Position removed successfully');
+    window.location.reload();
   };
 
   const totalCargos = computed(() => cargos.value.length);

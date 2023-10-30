@@ -13,7 +13,7 @@ defineProps({
   },
   cargo: {
     type: String,
-    default: 'Nenhum cargo selecionado.',
+    default: 'No positions selected',
   },
   selectPerson: Boolean,
 });
@@ -39,7 +39,6 @@ defineProps({
       <v-card-title>
         {{ cargo }}
       </v-card-title>
-
       <v-card-subtitle class="mb-3">
         Badge number:
         {{ person.id + Math.floor(Math.random() * 20) || '0' }}
