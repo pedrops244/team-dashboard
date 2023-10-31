@@ -1,10 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
 import Home from '../pages/Home.vue';
-import Team from '../pages/Team.vue';
-import MoreDetails from '../pages/MoreDetails.vue';
-import Page404 from '../pages/Page404.vue';
 
+const lazyLoad = (view) => import(`../pages/${view}.vue`);
 const routes = [
   {
     path: '/',
@@ -14,17 +12,17 @@ const routes = [
   {
     path: '/:pathMatch(.*)',
     name: 'Page404',
-    component: Page404,
+    component: lazyLoad('Page404'),
   },
   {
     path: '/equipe',
     name: 'Team',
-    component: Team,
+    component: lazyLoad('Team'),
   },
   {
     path: '/equipe/:id',
     name: 'MoreDetails',
-    component: MoreDetails,
+    component: lazyLoad('MoreDetails'),
   },
 ];
 
