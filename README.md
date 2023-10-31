@@ -1,69 +1,36 @@
-# base
+<div>
+  
+## Dashboard to Team Project
+Application to consume the ReqRes API to simulate a company's profiles.
 
-## Project setup
+## Deploy
+- https://dashboard-pedr1n.netlify.app/
 
-```
-# yarn
-yarn
+## Functionalities
+- The app list users on homepage dynamically.
+- We can see more details about each user and change or create roles for each one.
+- The application has a team route where we can list all the users in the team.
+  
+## Technologies used
+- **Frontend:** VueJs
+- **Stylization:** Vuetify and CSS
+- **API:** https://reqres.in/
 
-# npm
-npm install
+</div>
 
-# pnpm
-pnpm install
+<div>
+  
+## Dashboard para projeto de equipe
+Aplicativo para consumir a API ReqRes para simular perfis de uma empresa.
 
-# pnpm
-bun install
-```
+## Funcionalidades
+- O aplicativo lista usuários na página inicial de forma dinâmica.
+- Podemos ver mais detalhes sobre cada usuário e alterar ou criar funções para cada um.
+- A aplicação possui uma rota de equipe onde podemos listar todos os usuários da equipe.
+  
+## Tecnologias utilizadas
+- **Frontend:** VueJs
+- **Estilização:** Vuetify e CSS
+- **API:** https://reqres.in/
 
-### Compiles and hot-reloads for development
-
-```
-# yarn
-yarn dev
-
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# bun
-bun run dev
-```
-
-### Compiles and minifies for production
-
-```
-# yarn
-yarn build
-
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# bun
-bun run build
-```
-
-### Lints and fixes files
-
-```
-# yarn
-yarn lint
-
-# npm
-npm run lint
-
-# pnpm
-pnpm lint
-
-# bun
-bun run lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://vitejs.dev/config/).
+</div>
