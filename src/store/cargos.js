@@ -15,11 +15,8 @@ export const useCargos = defineStore('cargos', () => {
     location.reload();
   };
 
-  const totalCargos = computed(() => cargos.value.length);
-
   return {
     addCargo,
-    totalCargos,
     cargos,
     removeCargo,
   };
