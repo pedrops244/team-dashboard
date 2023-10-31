@@ -4,8 +4,8 @@ import ThisMenu from '@/components/Menu.vue';
 <template>
   <v-app>
     <v-main>
-      <ThisMenu />
       <v-container class="d-flex flex-column align-center" fluid>
+        <ThisMenu />
         <router-view></router-view>
       </v-container>
     </v-main>
