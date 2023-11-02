@@ -4,7 +4,7 @@ import UserList from '../components/UserList';
 
 <template>
   <div class="mt-50">
-    <h1>Profile Users</h1>
+    <h1 class="d-flex justify-center align-center">Profile Users</h1>
     <UserList />
   </div>
 </template>
