@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar color="primary" flat class="border-b">
+  <v-app-bar color="primary" class="border-b">
     <v-app-bar-title class="d-flex justify-center">
       <v-btn icon="mdi mdi-theme-light-dark" @click="toggleTheme"> </v-btn>
       <v-btn prepend-icon="mdi-home" to="/"> Home </v-btn>
