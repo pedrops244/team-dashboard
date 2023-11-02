@@ -9,16 +9,18 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
 import { useTheme } from 'vuetify';
 
+const darkMode = ref(false);
 const theme = useTheme();
 onMounted(() => {
   theme.global.name.value = localStorage.getItem('darkTheme');
 });
 
 function toggleTheme() {
-  theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark';
+  theme.global.name.value = darkMode.value ? 'light' : 'dark';
+  darkMode.value = !darkMode.value;
   localStorage.setItem('darkTheme', theme.global.name.value.toString());
 }
 </script>
